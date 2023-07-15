@@ -13,4 +13,16 @@ class Constants {
     object OperatorConstants {
         const val kDriverControllerPort = 0
     }
+
+    object DriveTrainConstants {
+        enum class MotorPosition(val canID: Int, val isLeft: Boolean, val isBack: Boolean ) {
+            FRONT_LEFT(20, true, false),
+            FRONT_RIGHT(21, false, false),
+            BACK_LEFT(22, true, false),
+            BACK_RIGHT(23, false, true);
+
+            val isRight: Boolean = !isLeft
+            val isFront: Boolean = !isBack
+        }
+    }
 }
