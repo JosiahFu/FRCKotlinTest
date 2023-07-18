@@ -81,8 +81,12 @@ class Robot : TimedRobot() {
     override fun testPeriodic() {}
 
     /** This function is called once when the robot is first started up.  */
-    override fun simulationInit() {}
+    override fun simulationInit() {
+        robotContainer?.simulationInit()
+    }
 
     /** This function is called periodically whilst in simulation.  */
-    override fun simulationPeriodic() {}
+    override fun simulationPeriodic() {
+        robotContainer?.simulationPeriodic()
+    }
 }

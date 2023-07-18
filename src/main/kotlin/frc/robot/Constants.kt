@@ -1,5 +1,8 @@
 package frc.robot
 
+import edu.wpi.first.math.util.Units
+
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -15,7 +18,7 @@ class Constants {
     }
 
     object DriveTrainConstants {
-        enum class MotorPosition(val canID: Int, val isLeft: Boolean, val isBack: Boolean ) {
+        enum class MotorPosition(val canID: Int, val isLeft: Boolean, val isBack: Boolean) {
             FRONT_LEFT(20, true, false),
             FRONT_RIGHT(21, false, false),
             BACK_LEFT(22, true, false),
@@ -24,5 +27,12 @@ class Constants {
             val isRight: Boolean = !isLeft
             val isFront: Boolean = !isBack
         }
+
+        val wheelDiameterMeters = Units.feetToMeters(0.5)
+
+        val trackWidthMeters = Units.feetToMeters(3.0)
+
+        const val maxWheelRadiansPerSecond = 24 // Arbitrary
+
     }
 }
